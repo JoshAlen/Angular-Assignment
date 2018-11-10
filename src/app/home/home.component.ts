@@ -10,15 +10,17 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   
   posts: object;
+  modalContent: string;
 
   constructor(private http: HttpClient) { 
   }
 
   ngOnInit() {
-    this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(posts => {
-      this.posts = posts;
-      console.log(this.posts);
-    });
+    this.modalContent = "contact";
+  }
+
+  onClick(value){
+    this.modalContent = value;
   }
 
 }

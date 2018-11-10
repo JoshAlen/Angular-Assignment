@@ -8,11 +8,18 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { SlideoutComponent } from './components/slideout/slideout.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
+import { ImageComponent } from './image/image.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
   {path: 'contact', component: ContactComponent },
-  {path: 'login', component: LoginComponent }
+  {path: 'login', component: LoginComponent },
+  {path: 'register', component: RegisterComponent},
+  {path: 'forgotpassword', component: ForgotpasswordComponent }
 ]
 
 @NgModule({
@@ -21,6 +28,11 @@ const appRoutes: Routes = [
     HomeComponent,
     ContactComponent,
     LoginComponent,
+    RegisterComponent,
+    ForgotpasswordComponent,
+    SlideoutComponent,
+    UserinfoComponent,
+    ImageComponent,
   ],
   imports: [
     BrowserModule,

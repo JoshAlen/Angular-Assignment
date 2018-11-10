@@ -1,14 +1,26 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">User Id</th>
-      <th scope="col">Title</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let post of posts">
-      <td>{{ post.userId }}</td>
-      <td>{{ post.title }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-6">
+      <br>
+      <button type="button" class="btn btn-primary js-tabs" (click)="onClick('userinfo')" data-toggle="modal" data-target="#exampleModal4">
+        User Information
+      </button>
+      <br>
+      <button type="button" class="btn btn-primary js-tabs" (click)="onClick('contact')" data-toggle="modal" data-target="#exampleModal4">
+        Contact
+      </button>
+      <br>
+      <button type="button" class="btn btn-primary js-tabs" (click)="onClick('image')" data-toggle="modal" data-target="#exampleModal4">
+        Image
+      </button>
+      <br>
+    </div>
+  </div>
+</div>
+
+<app-slideout>
+  
+  <app-userinfo *ngIf="modalContent === 'userinfo';"></app-userinfo>
+  <app-contact *ngIf="modalContent === 'contact'"></app-contact>
+  <app-image *ngIf="modalContent === 'image'"></app-image>
+</app-slideout>

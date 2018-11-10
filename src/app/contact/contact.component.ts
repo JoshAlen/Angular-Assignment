@@ -8,6 +8,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  
+  name: string;
+  surname: string;
+  message: string;
 
   constructor(private http: HttpClient) { }
 
@@ -15,15 +19,11 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    this.http.post('https://jsonplaceholder.typicode.com/posts', {
-      userId: Math.random(),
-      id: Math.random(),
-      title: form.value.username
-    }).subscribe(res => {
-      console.log(res);
-    }, error => {
-      console.log('Something went wrong');
-    });
+    console.log("---------------");
+    console.log("Name: " + form.value.name);
+    console.log("surname: " + form.value.surname);
+    console.log("message: " + form.value.message);
+    console.log("---------------");
   }
 
 }
