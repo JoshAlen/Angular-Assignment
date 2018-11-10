@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -12,10 +13,13 @@ export class HomeComponent implements OnInit {
   posts: object;
   modalContent: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(private router: Router) { 
   }
 
   ngOnInit() {
+    if (localStorage.getItem("currentUser") === null) {
+      this.router.navigate(["/login"]);
+    }
     this.modalContent = "contact";
   }
 
